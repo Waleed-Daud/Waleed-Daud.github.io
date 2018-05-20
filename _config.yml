@@ -2,7 +2,7 @@
 title: Blog
 description: A blog about ML, DL and anything in between.
 baseurl: "" # the subpath of your site, e.g. /blog ,/will-jekyll-template
-url: "localhost:4000" #"https://waleed-daud.github.io" # the base hostname & protocol for your site.
+url: "https://waleed-daud.github.io" # the base hostname & protocol for your site.
 
 # User settings
 username: Waleed Daud
