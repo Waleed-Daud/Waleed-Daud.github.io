@@ -1,0 +1,43 @@
+# Site settings
+title: Blog
+description: A blog about ML, DL and anything in between.
+baseurl: "" # the subpath of your site, e.g. /blog ,/will-jekyll-template
+url: "localhost:4000" #"https://waleed-daud.github.io" # the base hostname & protocol for your site.
+
+# User settings
+username: Waleed Daud
+user_description: Beginner AI Researcher
+user_title: Beginner AI Researcher
+email: waleed.daud@outlook.com
+twitter_username: Waleeddaud 
+github_username:  Waleed-Daud 
+gplus_username:  Waleed Daud 
+disqus_username: waleed_daud 
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+#  - title: Series
+#    url: /series
+  - title: Categories
+    url: /categories
+  - title: About Me
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
