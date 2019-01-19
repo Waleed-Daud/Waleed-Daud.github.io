@@ -26,7 +26,7 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://waleed-daud.github.io/Syslogng/">
+    <meta property="og:url" content="https://waleed-daud.github.io/AD/">
     <meta property="og:title" content="Guide to Syslog-ng">
     
     <meta property="og:image" content="https://waleed-daud.github.io/assets/img/blog-image.png">
@@ -62,7 +62,7 @@
     <meta name="theme-color" content="#0562DC">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://waleed-daud.github.io/Syslogng/">
+    <link rel="canonical" href="https://waleed-daud.github.io/AD/">
     <link rel="alternate" type="application/rss+xml" title="Blog" href="https://waleed-daud.github.io/feed.xml" />
 </head>
 
@@ -121,271 +121,35 @@
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-                <p><strong><img src="https://infolosium.files.wordpress.com/2016/06/syslogng-logo.jpg" alt="syslogng-logo" /></strong></p>
-
-<ul>
-  <li><strong>Read time: 15 minutes.</strong></li>
-</ul>
-
-<h1 id="introduction"><span style="text-decoration: underline;">Introduction:</span></h1>
-
-<p><span style="color: #000000;">Syslog-ng is an open source log management tool developed by <a href="https://www.balabit.com/">Balabit IT Security LTD.</a></span></p>
-
-<p><span style="color: #000000;">Syslog-ng is developed from Syslog protocol for Unix and Linux systems. in fact Syslog-ng consists of three components:</span></p>
-
-<ul>
-  <li><span style="color: #000000;">Application for collecting events</span></li>
-  <li><span style="color: #000000;">Data which is logs collected.</span></li>
-  <li><span style="color: #000000;">Protocol for forwarding events.</span></li>
-</ul>
-
-<p><span style="color: #000000;">There are two editions for Syslog-ng: Open Source Edition (OSE) and Premium Edition.</span> <span style="color: #000000;">OSE is available for Unix and Linux system. Windows supported in Premium Edition.</span></p>
-
-<h1 id="installation"><span style="text-decoration: underline;">Installation:</span></h1>
-
-<p><span style="color: #000000;">I’m using CentOS , so this tutorial will cover installation in RedHat/Centos ,Ubuntu Distributions using OSE ,Windows users will find Guide for installation <a href="https://www.balabit.com/sites/default/files/documents/syslog-ng-pe-latest-guides/en/syslog-ng-pe-guide-quickstart-windows/html-single/index.html#installation">here</a>.</span></p>
-
-<h3 id="redhatcentos"><span style="color: #000000;">RedHat/CentOS:</span></h3>
-
-<p><span style="color: #000000;">for centOS 6 add <a href="https://copr.fedorainfracloud.org/coprs/czanik/syslog-ng37epel6/repo/epel-6/czanik-syslog-ng37epel6-epel-6.repo">this</a> repository and <a href="https://copr.fedorainfracloud.org/coprs/czanik/syslog-ng37/repo/epel-7/czanik-syslog-ng37-epel-7.repo">this</a> for centOS 7 to yum.repos.d in /etc/yum.repos.d as follow:</span></p>
-
-<blockquote>
-  <h4 id="-cd-etcyumreposd"><span style="color: #993366;">$ <strong>cd /etc/yum.repos.d</strong></span></h4>
-
-  <h4 id="-sudo-vim-syslog-ngrepo"><span style="color: #993366;">$ <strong>sudo vim syslog-ng.repo</strong></span></h4>
-</blockquote>
-
-<p><span style="color: #000000;">and paste those repositories . then :</span></p>
-
-<blockquote>
-  <p><span style="color: #993366;">$ <strong>sudo yum install syslog-ng</strong></span></p>
-</blockquote>
-
-<h3 id="ubuntu"><span style="color: #000000;">Ubuntu:</span></h3>
-
-<p><span style="color: #000000;">Syslog-ng has already existed in official Ubuntu Packages ,now type:</span></p>
-
-<blockquote>
-  <p><span style="color: #993366;">$ <strong>sudo apt-get install syslog-ng</strong></span></p>
-</blockquote>
-
-<p><span style="color: #000000;">or:</span></p>
-
-<p><span style="color: #000000;">if you have any error please do the following command instead.</span></p>
-
-<blockquote>
-  <p><span style="color: #993366;">$ <strong>sudo apt-get install syslog-ng syslog-ng-core</strong></span></p>
-</blockquote>
-
-<h1 id="configurations"><span style="color: #808080;"><strong><span style="text-decoration: underline;">Configurations:</span></strong></span></h1>
-
-<p><span style="color: #000000;">To configure Syslog-ng ,you should know the basic structure of configuration, you can find Syslog-ng configuration file in <strong>/etc/syslog-ng</strong>.</span> <span style="color: #000000;">Syslog-ng configuration is divided into five parts:</span></p>
-
-<h2 id="1-source"><span style="color: #000000;">1-source:</span></h2>
-
-<p><span style="color: #000000;">Syslog-ng supported various types of inputs such as Unix-sockets,files,or you can receive logs from a remote server via TCP or UDP.</span></p>
-
-<h3 id="syntax"><span style="color: #000000;">syntax:</span></h3>
-
-<blockquote>
-  <h4 id="source-any_name--source_functions"><strong><span style="color: #993366;">source any_name { source_functions();};</span></strong></h4>
-</blockquote>
-
-<p><span style="color: #000000;">look at these examples:</span></p>
-
-<blockquote>
-  <p><strong><span style="color: #993366;">source nginx_source {internal(); file (“/var/log/nginx/error.log”);};</span></strong></p>
-</blockquote>
-
-<p><span style="color: #000000;">in this example, Syslog-ng takes its input from its logs and from a file called error.log in nginx directory.</span></p>
-
-<blockquote>
-  <p><strong><span style="color: #993366;">source any_name { tcp (ip(54.23.12.34) port(2000));};</span></strong></p>
-</blockquote>
-
-<p><span style="color: #000000;">this one takes inputs from remote server</span>.</p>
-
-<hr />
-
-<h2 id="2-filter"><span style="color: #000000;">2-filter:</span></h2>
-
-<p><span style="color: #000000;">when you have many traffics from many servers or you search for specific pattern importance of filters is come. Syslog-ng brings many filters that serve our need.</span> <span style="color: #000000;">syntax:</span></p>
-
-<blockquote>
-  <p><strong><span style="color: #993366;">filter any_name { filter_functions();};</span></strong></p>
-</blockquote>
-
-<p><span style="color: #000000;">these are some of the filter functions you can use:</span> <strong><span style="color: #000000;">netmask():filters logs based on their IPs.</span></strong></p>
-
-<blockquote>
-  <p><strong><span style="color: #993366;">filter any_name { netmask(192.54.66.4/24);};</span></strong></p>
-</blockquote>
-
-<p><strong><span style="color: #000000;">program(): filters logs based on their programs names in the log message .</span></strong></p>
-
-<blockquote>
-  <p><strong><span style="color: #993366;">filter any_name { program(program name); };</span></strong></p>
-</blockquote>
-
-<p><span style="color: #000000;"><strong>message(): filter text of logs based on regular expression</strong> .</span></p>
-
-<blockquote>
-  <p><span style="color: #993366;"><strong>filter {message(regular expression);};</strong></span></p>
-</blockquote>
-
-<p><span style="color: #000000;"><strong>level(): filter logs based on importance level</strong>.</span></p>
-
-<blockquote>
-  <p><span style="color: #993366;"><strong>filter any_name {level(priority);};</strong></span> <span style="color: #993366;"><strong>priority :warn ,crit ,err ,info ,…. or you can select range like: info..warn.</strong></span></p>
-</blockquote>
-
-<hr />
-
-<h2 id="3-destination"><span style="color: #000000;">3-destination:</span></h2>
-
-<p><span style="color: #000000;">after setting your sources and filters ,now it’s time to determine where your logs have to go.</span> <span style="color: #000000;">syntax:</span></p>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>destination any_name {destination functions();};</strong></span></p>
-</blockquote>
-
-<p><span style="color: #000000;">look at these examples:</span></p>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>destination nginx_destination {tcp(“43.65.78.3” port(5020));};</strong></span></p>
-</blockquote>
-
-<p><span style="color: #000000;">now ,we send logs to the remote server through port 5020.</span></p>
-
-<hr />
-
-<h2 id="4-options"><span style="color: #000000;">4-options:</span></h2>
-
-<p><span style="color: #000000;">Syslog-ng provides good options to control the process of source management <strong>such as Syslog-ng can accept or not timestamps <span style="color: #000000;">from source</span></strong></span><span style="color: #000000;">,destination management <strong><span style="color: #000000;">such as Syslog-ng can create a directory for logs in remote server</span></strong> , log management <span style="color: #000000;"><strong>such as what is the maximum size of output logs</strong></span>. these are some of the global options:</span><br />
-<strong><span style="color: #000000;">log-msg-size():</span></strong> <span style="color: #000000;">maximum sent messages in bytes</span><br />
-<strong><span style="color: #000000;"></span></strong><span style="color: #000000;"><strong>log_fifo_size():</strong>the number of message that can output queue can store.</span><br />
-<strong><span style="color: #000000;">flush_lines():</span></strong><span style="color: #000000;">how many lines flushed to destination at time.</span><br />
-<strong><span style="color: #000000;">flush_timeout():</span></strong><span style="color: #000000;">the time syslog-ng waits in output queue to accumulate the lines which send to destination</span><br />
-<strong><span style="color: #000000;">.</span><br /><span style="color: #000000;">syntax:</span></strong></p>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>options {options functions();};</strong></span></p>
-</blockquote>
-
-<p><span style="color: #000000;">example:</span></p>
-
-<blockquote>
-  <p><strong><span style="color: #800080;">options {</span></strong>
-<strong><span style="color: #800080;">log_fifo_size(800);</span></strong>
-<br />
-<strong><span style="color: #800080;">owner(jacky);        <span style="color: #000000;">#owner of logs files;</span></span></strong>
-<br />
-<strong><span style="color: #800080;">create_dirs(yes);        <span style="color: #000000;"># create directory in destination.</span></span></strong> 
-<br />
-<strong><span style="color: #800080;">group(jacky);        <span style="color: #000000;"># group of logs files</span></span></strong> 
-<br />
-<strong><span style="color: #800080;">dir_group(root);        <span style="color: #000000;"># logs directory group .</span></span></strong>
-<br />
-<strong><span style="color: #800080;">use_dns(yes);        <span style="color: #000000;"># use dns resolving or not.</span></span></strong>
-<br />
-<strong><span style="color: #800080;">keep_timestamp(no);        <span style="color: #000000;"># yes:use default time of logs ,no: use time of logs arriving.</span></span></strong><strong><span style="color: #800080;">};</span></strong></p>
-  <hr />
-</blockquote>
-
-<h2 id="5-log"><span style="color: #000000;">5-log:</span></h2>
-
-<p><span style="color: #000000;">now it’s time to flush our logs to its destination form sources controlled by global options.</span> <span style="color: #000000;">syslog-ng will never know how to work if you not include <strong>log</strong> section in configuration file.</span> <span style="color: #000000;">syntax:</span></p>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>log {source(source section name); filter(filter section name); destination(destination section name);};</strong></span></p>
-</blockquote>
-
-<hr />
-
-<p><span style="color: #000000;">now let’s see this full example:</span></p>
-
-<blockquote>
-  <p><strong><span style="color: #800080;">options {</span></strong> <br />
-<strong><span style="color: #800080;">log_fifo_size(800);</span></strong> <br />
-<strong><span style="color: #800080;">owner(jacky);</span></strong> <br />
-<strong><span style="color: #800080;">create_dirs(yes);</span></strong> <br />
-<strong><span style="color: #800080;">group(jacky);</span></strong> <br />
-<strong><span style="color: #800080;">dir_group(root);</span></strong> <br />
-<strong><span style="color: #800080;">use_dns(yes);</span></strong> <br />
-<strong><span style="color: #800080;">keep_timestamp(no);</span></strong> <br />
-<strong><span style="color: #800080;">};<br />
-</span></strong><strong><span style="color: #800080;">source apache_source {tcp(ip(43.42.11.54) port (2050));};<br />
-</span></strong> <strong><span style="color: #800080;">filter apache_filter { level(warn);};</span></strong><br />
-<strong><span style="color: #800080;">destination apache_dst { file(“~/Apache_logs/apache.log”);};</span></strong><br />
-<strong><span style="color: #800080;">log { source ( apache_source); filter(apache_filter); destination(apache_dst);};</span></strong></p>
-</blockquote>
-
-<p><span style="color: #000000;">in this example, we set global options then set our source to remote server and destination to apache.log file in Apache_logs directory .</span></p>
-
-<hr />
-
-<h1 id="troubleshooting"><strong><span style="color: #666699;">Troubleshooting:</span></strong></h1>
-
-<p><span style="color: #000000;">when you do any work ,you should know how to troubleshoot it .you can make troubleshooting on syslog-ng by :</span></p>
-
-<ul>
-  <li><strong><span style="color: #000000;">start syslog-ng service in debug mode.</span></strong></li>
-</ul>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>$ sudo syslog-ng -Fevd</strong></span></p>
-</blockquote>
-
-<p>-F, –foreground Do not go into the background after initialization  <br /> -v, –verbose Be a bit more verbose. <br /> -d, –debug Enable debug messages. <br /> -e, –stderr Log messages to stderr.</p>
-
-<ul>
-  <li><strong><span style="color: #000000;">use journalctl -xe :</span></strong></li>
-</ul>
-
-<blockquote>
-  <p><strong><span style="color: #800080;">$ journalctl -xe</span></strong></p>
-</blockquote>
-
-<ul>
-  <li><span style="color: #000000;">use <strong>nc -lp (port number) to listen to destination logs.</strong></span></li>
-</ul>
-
-<blockquote>
-  <p><span style="color: #800080;"><strong>$ nc -lp 2000</strong></span></p>
-</blockquote>
-
-<ul>
-  <li><span style="color: #000000;"><strong>use tcpdump</strong></span></li>
-</ul>
-
-<blockquote>
-  <p><span style="color: #800080;">$ sudo tcpdump -nS dst 192.168.9.4 port 2000</span></p>
-</blockquote>
-
-<hr />
-
-<p><span style="color: #000000;">now you have a solid foundation on Syslog-ng ,for more information please check resources below .</span></p>
-
-<hr />
-
-<h1 id="resources"><span style="color: #000000;">Resources:</span></h1>
-
-<p><a href="https://www.balabit.com/sites/default/files/documents/syslog-ng-ose-latest-guides/en/syslog-ng-ose-guide-admin/html/index.html">Balabit Documentation.</a> <br /> <a href="https://pzolee.blogs.balabit.com/2009/12/troubleshooting-and-debugging-syslog-ng/">more about troubleshooting</a>. <br /> <a href="https://www.youtube.com/channel/UCWzW5Z0rzGXim0pUYyThQ4w">Balabit youtube channel</a>.</p>
-
+                <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*} %]]></script>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot; A guide to syslog ng.&quot;%20https://waleed-daud.github.io/Syslogng/%20via%20&#64;Waleeddaud&hashtags=Networks,Tool,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot; A guide to syslog ng.&quot;%20https://waleed-daud.github.io/AD/%20via%20&#64;Waleeddaud&hashtags=Networks,Tool,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=https://waleed-daud.github.io/Syslogng/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=https://waleed-daud.github.io/AD/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://waleed-daud.github.io/Syslogng/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://waleed-daud.github.io/AD/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>

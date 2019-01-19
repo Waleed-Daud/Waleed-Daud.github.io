@@ -3,18 +3,49 @@
   <channel>
     <title>Blog</title>
     <description>A blog about ML, DL and anything in between.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 May 2018 03:25:47 +0200</pubDate>
-    <lastBuildDate>Sun, 20 May 2018 03:25:47 +0200</lastBuildDate>
-    <generator>Jekyll v3.5.1</generator>
+    <link>https://waleed-daud.github.io/</link>
+    <atom:link href="https://waleed-daud.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 19 Jan 2019 20:01:16 +0200</pubDate>
+    <lastBuildDate>Sat, 19 Jan 2019 20:01:16 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Guide to Syslog-ng</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;img src=&quot;https://infolosium.files.wordpress.com/2016/06/syslogng-logo.jpg&quot; alt=&quot;syslogng-logo&quot; /&gt;&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;Read time: 15 minutes.&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;introduction&quot;&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;Introduction:&lt;/span&gt;&lt;/h1&gt; &lt;p&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Syslog-ng is an open source log management tool developed by &lt;a href=&quot;https://www.balabit.com/&quot;&gt;Balabit IT Security LTD.&lt;/a&gt;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Syslog-ng is developed from Syslog protocol for Unix and Linux systems. in fact Syslog-ng consists of three components:&lt;/span&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Application for collecting events&lt;/span&gt;&lt;/li&gt; &lt;li&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Data which is logs collected.&lt;/span&gt;&lt;/li&gt; &lt;li&gt;&lt;span style=&quot;color: #000000;&quot;&gt;Protocol for forwarding events.&lt;/span&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;span style=&quot;color: #000000;&quot;&gt;There are two editions for Syslog-ng: Open Source Edition (OSE) and Premium Edition.&lt;/span&gt; &lt;span style=&quot;color: #000000;&quot;&gt;OSE is available for Unix and Linux system. Windows supported in...</description>
-        <pubDate>Mon, 27 Jun 2016 06:00:00 +0300</pubDate>
-        <link>http://localhost:4000/Syslogng/</link>
-        <guid isPermaLink="true">http://localhost:4000/Syslogng/</guid>
+        <pubDate>Mon, 27 Jun 2016 05:00:00 +0200</pubDate>
+        <link>https://waleed-daud.github.io/Syslogng/</link>
+        <guid isPermaLink="true">https://waleed-daud.github.io/Syslogng/</guid>
+        
+        <category>Networks</category>
+        
+        <category>Tool</category>
+        
+        
+        <category>Networks</category>
+        
+      </item>
+    
+      <item>
+        <title>Guide to Syslog-ng</title>
+        <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+      \vdots &amp; \ddots &amp; \vdots \\
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*} %]]&gt;&lt;/script&gt;
+</description>
+        <pubDate>Mon, 27 Jun 2016 05:00:00 +0200</pubDate>
+        <link>https://waleed-daud.github.io/AD/</link>
+        <guid isPermaLink="true">https://waleed-daud.github.io/AD/</guid>
         
         <category>Networks</category>
         

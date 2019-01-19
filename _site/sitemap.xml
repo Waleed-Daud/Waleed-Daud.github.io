@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	  <url>
-		<loc>http://localhost:4000/Syslogng/</loc>
+		<loc>https://waleed-daud.github.io/Syslogng/</loc>
+	  </url>
+	
+	  <url>
+		<loc>https://waleed-daud.github.io/AD/</loc>
 	  </url>
 	
 </urlset>

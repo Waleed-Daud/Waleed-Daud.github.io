@@ -6,6 +6,14 @@
       "tags"     : "Networks and Tool",
       "url"      : "/Syslogng/",
       "date"     : "27 Jun 2016"
+    } ,
+  
+    {
+      "title"    : "Guide to Syslog-ng",
+      "category" : "Networks",
+      "tags"     : "Networks and Tool",
+      "url"      : "/AD/",
+      "date"     : "27 Jun 2016"
     } 
   
 ]
