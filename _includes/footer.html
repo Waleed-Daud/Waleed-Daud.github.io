@@ -1,10 +1,19 @@
-<footer>
+<footer class="site-footer">
 
+    <div class="footer-top">
+        <div class="inner-wide">
+            {% include social-links.html %}
+            <a href="#page" class="top-link square">
+                <span class="icon-up-custom" aria-hidden="true"></span>
+                <span class="screen-reader-text">Back to the top</span>
+            </a>
+        </div><!-- .inner-wide -->
+    </div><!-- .footer-top -->
 
-<p>&copy;2018 Waleed Daud, theme<a href="http://jekyllrb.com/" target="_blank"></span> by <a href="https://willianjusten.com.br">Willian Justen</a></p> <br> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License"
- style="border-width:10;  
-    display: block;
-    margin-left: auto;
-    margin-right: auto" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"></a>
-</footer>
-<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+    <div class="site-info inner-wide">
+        <p><a href="#">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }}. Curious theme by <a target="_blank" href="https://justgoodthemes.com/">JustGoodThemes</a>. 
+        <br /> Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>.
+        </p>
+    </div><!-- .site-info -->
+
+</footer><!-- .site-footer -->
