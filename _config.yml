@@ -47,9 +47,9 @@ linkedin: 'khamiesw'
 # Navigation
 navigation:
   - text: Home
-    url: 
+    url: /
   - text: About
-    url: /about/
+    url: /about
 #  - text: Style Guide
 #    url: /style-guide/
  
