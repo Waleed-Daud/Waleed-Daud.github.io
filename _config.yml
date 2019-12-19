@@ -19,7 +19,7 @@ baseurl: # the subpath of your site, e.g. "/blog"
 #production_url: https://curious-jekyll.netlify.com/
 disqus: 'waleed_daud'
 #mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
-ga_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
+ga_analytics: "UA-154888120-1"
 
 # Contact form setings
 email: waleed.daud@outlook.com
