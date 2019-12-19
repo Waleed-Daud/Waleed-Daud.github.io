@@ -10,3 +10,8 @@ tips:
   name: tips
   description: A series of short stories that make you think.
   cover: /assets/images/covers/3.jpg
+  
+nice:
+  name: Nice
+  description: Nice is nicy
+  cover: /assets/images/covers/3.jpg

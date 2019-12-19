@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Advanced Markdown tips"
-tags: [ Jekyll, Tips ]
+tags: [ Jekyll, Tips, nice ]
 featured_image_thumbnail:
 featured_image: assets/images/posts/2018/7.jpg
 author: Waleed
