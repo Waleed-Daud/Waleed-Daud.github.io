@@ -24,11 +24,9 @@
 
 {% if site.sidebar_widget_description and site.sidebar_widget_address %}
 <section class="widget widget-text">
-    <h2 class="widget-title">Contact</h2>
-    <p>{{ site.sidebar_widget_description }}</p>
-    <ul class="contacts">
-        <li><span class="icon icon-envelope" aria-hidden="true"></span> {{ site.sidebar_widget_email }}<li>
-        <li><span class="icon icon-twitter" aria-hidden="true"></span> {{ site.twitter }}<li>
+<span><h2>{{ site.sidebar_widget_description }}</h2> <span>{{site.sidebar_widget_description_sm}}</span> </span> 
+<hr>
+{% include social-links.html %}
         
 </section>
 {% endif %}

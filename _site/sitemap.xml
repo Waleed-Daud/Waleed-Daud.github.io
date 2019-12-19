@@ -102,15 +102,6 @@
 <loc>http://localhost:4000/tag/travel/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/author/daniel/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/author/daniel/page2/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/author/nancy/</loc>
-</url>
-<url>
 <loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
