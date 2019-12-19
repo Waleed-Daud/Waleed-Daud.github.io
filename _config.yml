@@ -27,8 +27,7 @@ email: waleed.daud@outlook.com
 #thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
 # Contacts section in the sidebar
-sidebar_widget_description: "<cite> Our intelligence resides not in individual brains but in the collective mind.</cite>"
-sidebar_widget_description_sm: "Steven Sloman, The Knowledge Illusion"
+sidebar_widget_description: ""
 sidebar_widget_email: "waleed.daud@outlook.com"
 sidebar_widget_address: "Canada"
 ##sidebar_widget_phone: ""
