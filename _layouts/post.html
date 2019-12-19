@@ -33,7 +33,7 @@ post_class: post-template
                             {% for author in site.data.authors %}
                             {% if author[1].username == page.author %}
                             by <span class="post-author">
-                                <a href="{{ site.baseurl }}/author/{{ page.author }}/">{{ author[1].name }}</a>
+                                <a href="{{ site.baseurl }}/about">{{ author[1].name }}</a>
                             </span>
                             {% endif %}
                             {% endfor %}
