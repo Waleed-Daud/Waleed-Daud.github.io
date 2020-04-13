@@ -10,7 +10,7 @@ class: page-template
 
         <header class="cover page-header">
             {% if page.featured_image %}
-            <div class="cover-bg" style="background-image: url({{ site.baseurl }}{{ page.featured_image }})"></div>
+            <div class="cover-bg" style="background-image: url({{ site.baseurl }}{{ page.background_image }})"></div>
             {% endif %}
             <div class="cover-content">
                 <div class="inner">
@@ -20,7 +20,11 @@ class: page-template
         </header><!-- .cover -->
 
         <div class="entry-content inner">
+        <div style=" margin-left: auto; margin-right: auto;width: 14em"> <img style="vertical-align: middle;width: 140px;height: 180px; border-radius: 50%;" src="{{page.featured_image}}" /></div>
+        
             {{content}}
+
+    
         </div>
 
     </article><!-- .post .page -->

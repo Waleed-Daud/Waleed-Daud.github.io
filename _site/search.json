@@ -1,27 +1,3 @@
 [
   
-    {
-      "title"    : "What is Jekyll?",
-      "category" : "",
-      "tags"     : "Jekyll, Development",
-      "url"      : "/what-is-jekyll",
-      "date"     : "February 10, 2018"
-    } ,
-  
-    {
-      "title"    : "Advanced Markdown tips",
-      "category" : "",
-      "tags"     : "Jekyll, Tips, nice",
-      "url"      : "/advanced-markdown-tips",
-      "date"     : "February 7, 2018"
-    } ,
-  
-    {
-      "title"    : "A Week With the Apple Watch",
-      "category" : "",
-      "tags"     : "Tips, Minimal",
-      "url"      : "/a-week-with-the-apple-watch",
-      "date"     : "January 12, 2018"
-    } 
-  
 ]

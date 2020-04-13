@@ -9,12 +9,12 @@
 # If you change this file, please restart the server process.
 
 # Site setings
-name: 'Kh'
+name: 'Blog | Waleed Khamies'
 description: 'Bold Theme For Brave People'
 # Sidebar about text
 site_description: 'Welcome to my blog.'
-logo: # path of site logo, e.g. "assets/images/images/logo.png"
-favicon: 'assets/images/favicon.ico'
+logo: "assets/images/images/me.jpg"
+#favicon: 'assets/images/favicon.ico'
 baseurl: # the subpath of your site, e.g. "/blog"
 #production_url: https://curious-jekyll.netlify.com/
 disqus: 'khamies-github'
@@ -22,14 +22,14 @@ disqus: 'khamies-github'
 ga_analytics: "UA-154888120-1"
 
 # Contact form setings
-email: waleed.daud@outlook.com
+email: khamiesw@outlook.com
 #contact_page_description: "Forma theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want."
 #thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
 # Contacts section in the sidebar
-sidebar_widget_description: "<cite> Our intelligence resides not in individual brains but in the collective mind.</cite>"
-sidebar_widget_description_sm: "Steven Sloman, The Knowledge Illusion"
-sidebar_widget_email: "waleed.daud@outlook.com"
+#sidebar_widget_description: "<cite> Our intelligence resides not in individual brains but in the collective mind.</cite>"
+#sidebar_widget_description_sm: "Steven Sloman, The Knowledge Illusion"
+sidebar_widget_email: "khamiesw@outlook.com"
 sidebar_widget_address: "Canada"
 ##sidebar_widget_phone: ""
 
