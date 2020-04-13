@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog | Waleed Khamies</title>
-    <description>Bold Theme For Brave People</description>
+    <description>BLog | Waleed Khamies</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2020 01:00:56 -0400</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2020 01:00:56 -0400</lastBuildDate>
+    <pubDate>Mon, 13 Apr 2020 14:27:53 -0400</pubDate>
+    <lastBuildDate>Mon, 13 Apr 2020 14:27:53 -0400</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
   </channel>
