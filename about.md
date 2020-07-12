@@ -16,7 +16,7 @@ My research interest is reinforcement learning, where I'm interested in Interpre
 - **2018-2019:** AMMI : Msc, Machine Intelligence. Adviser: [George konidaris](http://cs.brown.edu/people/gdk/)
 - **2013 - 2018:** University of Khartoum: BSc, Electrical and electronics engineering. Adviser:  [Benjamin Rosman](https://www.benjaminrosman.com/)
 
-#### **Publications**
+#### **Publications**:
 
 [**Transfer Learning for Prosthetics Using Imitation Learning**]( https://arxiv.org/abs/1901.04772), ***BlackInAI workshop/NeurIPS 2018***
 
